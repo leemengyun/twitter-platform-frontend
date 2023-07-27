@@ -43,18 +43,6 @@ Admin
   </tr>
 </table>
 
-<<<<<<< HEAD
-=======
-## Features 功能
-- User login
-
-> test accont
-
-| Acoount  | Password  | 
-| ------------ | ------------ |
-| user1  | 12345678  |
-
->>>>>>> 0c22fa4ae70f4899a4125beab74b2c7ce0aa530d
 !["loginPage"](public/login.png)
 
 - Register a new account
