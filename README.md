@@ -2,7 +2,13 @@
 - 這是alphaCamp學期３作業 以前後分離的狀態下製作出簡易版的社群平台 在這個實作下學習到串接API時與後端即時溝通與資料規格上的討論，在技術上是以React環境，熟悉JSX、SCSS、react-hook...等的使用方式
 
 ## Features 功能
-- 前台登入 帳號：user1 密碼：12345678
+- User login
+
+> test accont
+
+| Acoount  | Password  | 
+| ------------ | ------------ |
+| user1  | 12345678  |
 !["loginPage"](public/login.png)
 
 - 可以註冊自己的帳號，到前台登入（註冊的帳號無法到後台登入）
