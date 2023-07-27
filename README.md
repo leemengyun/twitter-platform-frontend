@@ -128,19 +128,19 @@ Admin
   npm install
 ```
 
-3. Start the project by entering the following command in the terminal:
+4. Start the project by entering the following command in the terminal:
 
 ```
   npm start
 ```
 
-1. Open your browser and go to http://localhost:3000/#/login ,then you'll see the login page.
-2. Use the following credentials to log in to the frontend or backend:
+5. Open your browser and go to http://localhost:3000/#/login ,then you'll see the login page.
+6. Use the following credentials to log in to the frontend or backend:
 
 - User login: Username: user1, Password: 12345678
 - Admin login: Username: root, Password: 12345678
 
-3. To stop the project, enter the following command in the terminal:
+7. To stop the project, enter the following command in the terminal:
    `ctrl+c`
 
 ## Project Team Members
