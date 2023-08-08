@@ -1,7 +1,8 @@
 import axios from 'axios';
 // const baseUrl = 'http://localhost:3004';
-
-const baseUrl = 'https://calm-eyrie-50498.herokuapp.com/api';
+// const baseUrl = 'http://localhost:3000/api';
+const baseUrl = 'https://twitter-api-2023-qqb5.onrender.com/api';
+// const baseUrl = 'https://calm-eyrie-50498.herokuapp.com/api';
 // const baseUrl = 'https://agile-forest-26034.herokuapp.com/api';
 
 const axiosInstance = axios.create({
@@ -81,7 +82,7 @@ export const getUserTweets = async (pathId) => {
 export const getUserLikedTweets = async (pathId) => {
   try {
     const res = await axiosInstance.get(`${baseUrl}/users/${pathId}/likes`);
-    console.log(res)
+    console.log(res);
     return res.data;
   } catch (error) {
     console.log('[Get getUserLikedTweets Failed!!]:', error);
@@ -170,9 +171,8 @@ export const cancelFollow = async (followingId) => {
 export const likeTweet = async (id) => {
   try {
     const res = await axiosInstance.post(`${baseUrl}/tweets/${id}/like`);
-    
+
     return res.data;
-    
   } catch (error) {
     console.error('[Like Tweet failed:]:', error);
   }
