@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/twitter-platform-frontend/static/css/main.0cf87e76.chunk.css",
+    "main.js": "/twitter-platform-frontend/static/js/main.fc400f22.chunk.js",
+    "main.js.map": "/twitter-platform-frontend/static/js/main.fc400f22.chunk.js.map",
+    "runtime-main.js": "/twitter-platform-frontend/static/js/runtime-main.8592ba5e.js",
+    "runtime-main.js.map": "/twitter-platform-frontend/static/js/runtime-main.8592ba5e.js.map",
+    "static/css/2.67b60acb.chunk.css": "/twitter-platform-frontend/static/css/2.67b60acb.chunk.css",
+    "static/js/2.60c8736d.chunk.js": "/twitter-platform-frontend/static/js/2.60c8736d.chunk.js",
+    "static/js/2.60c8736d.chunk.js.map": "/twitter-platform-frontend/static/js/2.60c8736d.chunk.js.map",
+    "static/js/3.4eea065a.chunk.js": "/twitter-platform-frontend/static/js/3.4eea065a.chunk.js",
+    "static/js/3.4eea065a.chunk.js.map": "/twitter-platform-frontend/static/js/3.4eea065a.chunk.js.map",
+    "index.html": "/twitter-platform-frontend/index.html",
+    "static/css/2.67b60acb.chunk.css.map": "/twitter-platform-frontend/static/css/2.67b60acb.chunk.css.map",
+    "static/css/main.0cf87e76.chunk.css.map": "/twitter-platform-frontend/static/css/main.0cf87e76.chunk.css.map",
+    "static/js/2.60c8736d.chunk.js.LICENSE.txt": "/twitter-platform-frontend/static/js/2.60c8736d.chunk.js.LICENSE.txt",
+    "static/media/addphoto.2e797657.svg": "/twitter-platform-frontend/static/media/addphoto.2e797657.svg",
+    "static/media/alert-success-2.c7bb216b.svg": "/twitter-platform-frontend/static/media/alert-success-2.c7bb216b.svg",
+    "static/media/alert-warning-2.c524ac36.svg": "/twitter-platform-frontend/static/media/alert-warning-2.c524ac36.svg",
+    "static/media/back.de35b2eb.svg": "/twitter-platform-frontend/static/media/back.de35b2eb.svg",
+    "static/media/close.8d623dc5.svg": "/twitter-platform-frontend/static/media/close.8d623dc5.svg",
+    "static/media/main.scss": "/twitter-platform-frontend/static/media/user.bfbed814.svg",
+    "static/media/like-filled.a23cc5e1.svg": "/twitter-platform-frontend/static/media/like-filled.a23cc5e1.svg",
+    "static/media/like.81043da8.svg": "/twitter-platform-frontend/static/media/like.81043da8.svg",
+    "static/media/logo.cd55da48.svg": "/twitter-platform-frontend/static/media/logo.cd55da48.svg",
+    "static/media/message.4c9af58b.svg": "/twitter-platform-frontend/static/media/message.4c9af58b.svg",
+    "static/media/notice.60c0a6cc.svg": "/twitter-platform-frontend/static/media/notice.60c0a6cc.svg",
+    "static/media/reply.1d9be076.svg": "/twitter-platform-frontend/static/media/reply.1d9be076.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8592ba5e.js",
+    "static/css/2.67b60acb.chunk.css",
+    "static/js/2.60c8736d.chunk.js",
+    "static/css/main.0cf87e76.chunk.css",
+    "static/js/main.fc400f22.chunk.js"
+  ]
+}
