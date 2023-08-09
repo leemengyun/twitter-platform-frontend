@@ -394,7 +394,8 @@ h5 {
     }
 
     & .active {
-      filter: var(--icon-main-color);
+      filter: brightness(0) saturate(100%) invert(54%) sepia(46%)
+        saturate(6975%) hue-rotate(2deg) brightness(104%) contrast(104%);
     }
 
     & .tweet-count {

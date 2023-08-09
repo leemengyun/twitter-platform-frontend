@@ -69,23 +69,23 @@ Admin
   !["mainPage"](public/mainPage.png)
 
 - Compose tweets and create new posts
-  !["tweet"](public/推文.png)
+  !["tweet"](public/tweet.png)
 
 - Reply a tweet
-  !["reply"](public/回覆.png)
+  !["reply"](public/reply.png)
 
 - Like a tweet by clicking the heart icon
-  !["like"](public/喜歡.png)
+  !["like"](public/like.png)
 
 - Click on a user's avatar to view their profile information, tweets, replies, and liked tweets
-  !["others"](public/其他用戶.png)
+  !["others"](public/otherUser.pn)
 
 - Click the follow button to start following a user
-  !["follow"](public/跟隨.png)
+  !["follow"](public/follow.png)
 
 - Click on "Following" or "Followers" to view the current list of followers and following users
-  !["followlink"](public/追隨名單.png)
-  !["followList"](public/跟隨列表.png)
+  !["followlink"](public/followCount.png)
+  !["followList"](public/followerList.png)
 
 - Edit personal profile and modify the avatar, background, name, and bio
   !["edit"](public/edirProfile.png)
@@ -94,11 +94,10 @@ Admin
   !["setting"](public/settingPage.png)
 
 - View all tweets from admin side and have the ability to delete posts that do not comply with the rules from the backend.
-  !["admin"](public/後台.png)
-  !["adminDelete"](public/後台刪除推文.png)
+  !["admin"](public/adminTweets.png)
 
 - View a list of all users from the admin side
-  !["adminUsers"](public/後台使用者列表.png)
+  !["adminUsers"](public/adminUsers.png)
 
 ## Prerequisites
 
