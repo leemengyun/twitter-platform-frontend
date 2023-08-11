@@ -1,4 +1,4 @@
-# Twitter-frontend
+# CoffeeTalk-frontend
 
 - A simplified version of twitter platform using a frontend-backend separation approach.
 - using React, SASS, Bootstrap-grid,react-hook-form...etc.
