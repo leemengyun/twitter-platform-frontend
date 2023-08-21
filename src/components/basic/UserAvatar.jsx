@@ -1,5 +1,7 @@
 import React from 'react';
-// import Defaultavatar from '../../assets/images/icon/avatar.svg';
+// import skeleton-loading
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const UserAvatar = ({ avatar, onClick, userId }) => {
   return (

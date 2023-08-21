@@ -21,6 +21,7 @@ const MainPage = ({ setModalTweetOpen }) => {
   const [tweets, setTweets] = useState([]);
   const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     isAuthentic,
@@ -40,12 +41,15 @@ const MainPage = ({ setModalTweetOpen }) => {
 
   //@ 呼叫 /api/tweets
   const getTweetsAsync = async () => {
+    setIsLoading(true);
     try {
       const data = await getTweets();
       setTweets(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
       setIsTweetsLoaded(true); // 标记为已加载，以防止无限加载
+      setIsLoading(false);
     }
   };
 
@@ -119,6 +123,7 @@ const MainPage = ({ setModalTweetOpen }) => {
               onClick={handleClickCard}
               setIsTweetsLoaded={setIsTweetsLoaded}
               onToggleLike={handleChangeLikeMode}
+              isLoading={isLoading}
             />
           </div>
         </section>
