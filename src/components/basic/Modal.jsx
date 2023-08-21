@@ -27,6 +27,7 @@ const formData = new FormData();
 
 const Modal = () => {
   const { isAuthentic, member, setModalProOpen } = useAuth(); // 取出需要的狀態與方法
+  const [loading, setLoading] = useState(false);
   const [profile, setProfile] = useState({
     name: '',
     introduction: '',
@@ -114,13 +115,6 @@ const Modal = () => {
 
   //儲存form
   const onSubmit = async (data) => {
-    // 如果是只要給api
-    // console.log('we get data', data);
-    // console.log('onSubmit formData.get');
-    // console.log(formData.get('avatar'));
-    // console.log(formData.get('banner'));
-
-    // console.log(member.id);
     try {
       //@ 加入input值
       if (formData.get('name')) {
@@ -134,6 +128,7 @@ const Modal = () => {
 
       formData.append('introduction', data.introduction);
 
+      setLoading(true);
       const res = await updateUserInfo({
         id: member.id,
         // data: data,
@@ -143,6 +138,8 @@ const Modal = () => {
       if (res.status === 200) {
         // console.log('SUCCESS!');
         setModalProOpen(false);
+        setLoading(false);
+
         ToastSuccess.fire({
           title: '上傳照片成功!',
         });
@@ -246,6 +243,7 @@ const Modal = () => {
         <ModalHeaderIcon
           setModalProOpen={setModalProOpen}
           onSubmit={onSubmit}
+          loading={loading}
         />
         <div className='modal-content'>
           <div className='profile-bk-wrapper'>
@@ -362,23 +360,6 @@ const Modal = () => {
                 </span>
               </div>
             </div>
-
-            {/* <input
-              type='text'
-              {...register('banner')}
-              style={{
-                display: 'none',
-              }}
-            />
-            <input
-              type='text'
-              name='avatar'
-              id='avatar'
-              {...register('avatar')}
-              style={{
-                display: 'none',
-              }}
-            /> */}
           </form>
         </div>
       </ModalContent>
