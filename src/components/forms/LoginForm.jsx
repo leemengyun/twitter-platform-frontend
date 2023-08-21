@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
@@ -10,6 +10,8 @@ import 'sweetalert2/src/sweetalert2.scss';
 // import withReactContent from 'sweetalert2-react-content';
 import iconNotiSuccess from '../../assets/images/icon/alert-success-2.svg';
 import iconNotiWanrning from '../../assets/images/icon/alert-warning-2.svg';
+// import react-spinners
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const LoginForm = () => {
   // using react-form-hook-set-up
@@ -22,7 +24,7 @@ const LoginForm = () => {
   } = useForm();
   const { login, isAuthentic } = useAuth();
   const navigate = useNavigate();
-
+  const [loading, setLoading] = useState(false);
   // 客製toast 元件
   const ToastSuccess = Swal.mixin({
     toast: true,
@@ -69,6 +71,7 @@ const LoginForm = () => {
     if (data.password.length === 0) {
       return;
     }
+    setLoading(true);
     const { success, errorMessage } = await login({
       account: data.username,
       password: data.password,
@@ -76,13 +79,16 @@ const LoginForm = () => {
 
     if (success) {
       // console.log('Login: ', success);
+      setLoading(false);
       ToastSuccess.fire({
         title: '登入成功!',
       });
+
       reset();
       return;
     } else {
       // console.log('Login: ', success);
+
       ToastWarning.fire({
         title: `${errorMessage.message}`,
       });
@@ -145,7 +151,10 @@ const LoginForm = () => {
           />
         </div>
         <button className='button-filled button-lg' type='submit'>
-          登入
+          {loading === false && '登入'}
+          {loading && (
+            <ClipLoader color='#36d7b7' loading={loading} size={35} />
+          )}
         </button>
         <div className='button-group-row login-button-group'>
           <Link to='/register' className='button-link'>
