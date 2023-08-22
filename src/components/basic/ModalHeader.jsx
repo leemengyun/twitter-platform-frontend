@@ -22,7 +22,7 @@ const ModalHeader = ({ setModalTweetOpen, setModalReplyOpen }) => {
     </>
   );
 };
-const ModalHeaderIcon = ({ setModalProOpen, onSubmit, loading }) => {
+const ModalHeaderIcon = ({ setModalProOpen, onSubmit, isLoading }) => {
   return (
     <>
       <div className='modal-header modal-header-with-btn'>
@@ -37,10 +37,11 @@ const ModalHeaderIcon = ({ setModalProOpen, onSubmit, loading }) => {
           className='button-md button-m active'
           form='hook-form'
           type='submit'
+          disabled={isLoading ? true : false}
         >
-          {loading === false && '儲存'}
-          {loading && (
-            <ClipLoader color='#36d7b7' loading={loading} size={20} />
+          {isLoading === false && '儲存'}
+          {isLoading && (
+            <ClipLoader color='#36d7b7' loading={isLoading} size={20} />
           )}
         </button>
       </div>

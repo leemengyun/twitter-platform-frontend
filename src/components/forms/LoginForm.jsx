@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import InputGroup from './InputGroup';
 import { useAuth } from '../context/AuthContext';
+import { clsx } from 'clsx';
+
 //modal dialog套件
 import Swal from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
@@ -24,7 +26,7 @@ const LoginForm = () => {
   } = useForm();
   const { login, isAuthentic } = useAuth();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // 客製toast 元件
   const ToastSuccess = Swal.mixin({
     toast: true,
@@ -71,7 +73,7 @@ const LoginForm = () => {
     if (data.password.length === 0) {
       return;
     }
-    setLoading(true);
+    setIsLoading(true);
     const { success, errorMessage } = await login({
       account: data.username,
       password: data.password,
@@ -79,7 +81,7 @@ const LoginForm = () => {
 
     if (success) {
       // console.log('Login: ', success);
-      setLoading(false);
+      setIsLoading(false);
       ToastSuccess.fire({
         title: '登入成功!',
       });
@@ -88,10 +90,10 @@ const LoginForm = () => {
       return;
     } else {
       // console.log('Login: ', success);
-
       ToastWarning.fire({
         title: `${errorMessage.message}`,
       });
+      setIsLoading(false);
     }
   };
 
@@ -150,10 +152,14 @@ const LoginForm = () => {
             watch={watch}
           />
         </div>
-        <button className='button-filled button-lg' type='submit'>
-          {loading === false && '登入'}
-          {loading && (
-            <ClipLoader color='#36d7b7' loading={loading} size={35} />
+        <button
+          className='button-filled button-lg'
+          type='submit'
+          disabled={isLoading ? true : false}
+        >
+          {isLoading === false && '登入'}
+          {isLoading && (
+            <ClipLoader color='#36d7b7' loading={isLoading} size={35} />
           )}
         </button>
         <div className='button-group-row login-button-group'>

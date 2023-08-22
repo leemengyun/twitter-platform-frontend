@@ -27,7 +27,7 @@ const formData = new FormData();
 
 const Modal = () => {
   const { isAuthentic, member, setModalProOpen } = useAuth(); // 取出需要的狀態與方法
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [profile, setProfile] = useState({
     name: '',
     introduction: '',
@@ -128,7 +128,7 @@ const Modal = () => {
 
       formData.append('introduction', data.introduction);
 
-      setLoading(true);
+      setIsLoading(true);
       const res = await updateUserInfo({
         id: member.id,
         // data: data,
@@ -138,7 +138,7 @@ const Modal = () => {
       if (res.status === 200) {
         // console.log('SUCCESS!');
         setModalProOpen(false);
-        setLoading(false);
+        setIsLoading(false);
 
         ToastSuccess.fire({
           title: '上傳照片成功!',
@@ -243,7 +243,7 @@ const Modal = () => {
         <ModalHeaderIcon
           setModalProOpen={setModalProOpen}
           onSubmit={onSubmit}
-          loading={loading}
+          isLoading={isLoading}
         />
         <div className='modal-content'>
           <div className='profile-bk-wrapper'>
