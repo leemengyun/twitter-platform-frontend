@@ -1,5 +1,7 @@
 import React from 'react';
 
+// import react-spinners
+import ClipLoader from 'react-spinners/ClipLoader';
 // import svg
 import iconClose from '../../assets/images/icon/close.svg';
 
@@ -20,7 +22,7 @@ const ModalHeader = ({ setModalTweetOpen, setModalReplyOpen }) => {
     </>
   );
 };
-const ModalHeaderIcon = ({ setModalProOpen, onSubmit }) => {
+const ModalHeaderIcon = ({ setModalProOpen, onSubmit, isLoading }) => {
   return (
     <>
       <div className='modal-header modal-header-with-btn'>
@@ -35,11 +37,12 @@ const ModalHeaderIcon = ({ setModalProOpen, onSubmit }) => {
           className='button-md button-m active'
           form='hook-form'
           type='submit'
-
-          // onClick={onSubmit}
-          //  type='submit'
+          disabled={isLoading ? true : false}
         >
-          儲存
+          {isLoading === false && '儲存'}
+          {isLoading && (
+            <ClipLoader color='#36d7b7' loading={isLoading} size={20} />
+          )}
         </button>
       </div>
     </>

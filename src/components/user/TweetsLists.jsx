@@ -1,10 +1,13 @@
 import React from 'react';
 import TweetCardBasic from '../basic/TweetCardBasic';
+import TweetBasicCardSkeleton from '../sekeleton/TweetBasicCardSkeleton.jsx';
+
 // import { useEffect } from 'react';
 
-const TweetsLists = ({ tweets, onClick, onToggleLike }) => {
+const TweetsLists = ({ tweets, onClick, onToggleLike, isLoading }) => {
   return (
     <div className='TweetLists'>
+      {isLoading && <TweetBasicCardSkeleton cards={8} />}
       {tweets.map((tweet) => {
         return (
           <TweetCardBasic
