@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/twitter-platform-frontend/static/css/main.67a51f63.chunk.css",
-    "main.js": "/twitter-platform-frontend/static/js/main.bb12d874.chunk.js",
-    "main.js.map": "/twitter-platform-frontend/static/js/main.bb12d874.chunk.js.map",
+    "main.css": "/twitter-platform-frontend/static/css/main.ae2a586d.chunk.css",
+    "main.js": "/twitter-platform-frontend/static/js/main.bf1e511c.chunk.js",
+    "main.js.map": "/twitter-platform-frontend/static/js/main.bf1e511c.chunk.js.map",
     "runtime-main.js": "/twitter-platform-frontend/static/js/runtime-main.ba2d04a9.js",
     "runtime-main.js.map": "/twitter-platform-frontend/static/js/runtime-main.ba2d04a9.js.map",
     "static/css/2.8b1caef3.chunk.css": "/twitter-platform-frontend/static/css/2.8b1caef3.chunk.css",
-    "static/js/2.112aee4c.chunk.js": "/twitter-platform-frontend/static/js/2.112aee4c.chunk.js",
-    "static/js/2.112aee4c.chunk.js.map": "/twitter-platform-frontend/static/js/2.112aee4c.chunk.js.map",
+    "static/js/2.170b88c9.chunk.js": "/twitter-platform-frontend/static/js/2.170b88c9.chunk.js",
+    "static/js/2.170b88c9.chunk.js.map": "/twitter-platform-frontend/static/js/2.170b88c9.chunk.js.map",
     "static/js/3.bdc5065d.chunk.js": "/twitter-platform-frontend/static/js/3.bdc5065d.chunk.js",
     "static/js/3.bdc5065d.chunk.js.map": "/twitter-platform-frontend/static/js/3.bdc5065d.chunk.js.map",
     "index.html": "/twitter-platform-frontend/index.html",
     "static/css/2.8b1caef3.chunk.css.map": "/twitter-platform-frontend/static/css/2.8b1caef3.chunk.css.map",
-    "static/css/main.67a51f63.chunk.css.map": "/twitter-platform-frontend/static/css/main.67a51f63.chunk.css.map",
-    "static/js/2.112aee4c.chunk.js.LICENSE.txt": "/twitter-platform-frontend/static/js/2.112aee4c.chunk.js.LICENSE.txt",
+    "static/css/main.ae2a586d.chunk.css.map": "/twitter-platform-frontend/static/css/main.ae2a586d.chunk.css.map",
+    "static/js/2.170b88c9.chunk.js.LICENSE.txt": "/twitter-platform-frontend/static/js/2.170b88c9.chunk.js.LICENSE.txt",
     "static/media/addphoto.2e797657.svg": "/twitter-platform-frontend/static/media/addphoto.2e797657.svg",
     "static/media/alert-success-2.c7bb216b.svg": "/twitter-platform-frontend/static/media/alert-success-2.c7bb216b.svg",
     "static/media/alert-warning-2.c524ac36.svg": "/twitter-platform-frontend/static/media/alert-warning-2.c524ac36.svg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.ba2d04a9.js",
     "static/css/2.8b1caef3.chunk.css",
-    "static/js/2.112aee4c.chunk.js",
-    "static/css/main.67a51f63.chunk.css",
-    "static/js/main.bb12d874.chunk.js"
+    "static/js/2.170b88c9.chunk.js",
+    "static/css/main.ae2a586d.chunk.css",
+    "static/js/main.bf1e511c.chunk.js"
   ]
 }
