@@ -58,11 +58,12 @@ const FollowCardList = ({ setPathId }) => {
           <h4>推薦跟隨</h4>
         </div>
         {isLoading && <FollowCardSkeleton cards={8} />}
-        {users.map((user) => {
-          return (
-            <FollowCard key={user.id} {...user} onClick={handleClickCard} />
-          );
-        })}
+        {!isLoading &&
+          users.map((user) => {
+            return (
+              <FollowCard key={user.id} {...user} onClick={handleClickCard} />
+            );
+          })}
       </div>
     </>
   );

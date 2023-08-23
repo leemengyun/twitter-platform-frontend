@@ -24,7 +24,8 @@ import loadingBg from '../assets/images/loading-bk.jpeg';
 const UserPage = () => {
   const [tabIndex, setTabIndex] = useState('0');
   const [pathId, setPathId] = useState(Number(useParams().id)); //只是為了與UserOtherPage一樣而設定state
-  const [isLoading, setIsLoading] = useState(true); //ProfileCard-圖片元件狀態
+  const [isLoading, setIsLoading] = useState(false); //ProfileCard-圖片元件狀態
+  const [isTweetLoading, setIsTweetLoading] = useState(false); //tweets-loading狀態
   const [imageStatus, setImageStatus] = useState('loading'); // ProfileCard-圖片元件狀態：'loading', 'fetching', 'loaded'
 
   //取得網址:id
@@ -46,38 +47,70 @@ const UserPage = () => {
   const [userInfo, setUserInfo] = useState({});
   const [userTweets, setUserTweets] = useState([]);
   //分別建立一個state儲存tweets like replies資料 若state有資料便不抓取新資料 除非重整頁面
+  const getUserInfoIntialAsync = async () => {
+    setIsLoading(true);
+    try {
+      const userInfo = await getUserInfo(pathId);
+      setImageStatus('fetching'); // 開始獲取圖片
+      if (userInfo) {
+        setImageStatus('loaded');
+        setIsLoading(false);
+        setUserInfo(userInfo);
+      }
+      return;
+    } catch (error) {
+      console.error('[getUser Info  with Async failed]', error);
+      setIsLoading(false);
+      setImageStatus('loading'); // 發生錯誤，設置回 loading 狀態
+    }
+  };
+
+  const getUserTweetsIntialAsync = async () => {
+    // setIsTweetLoading(true);
+    try {
+      const data = await getUserTweets(pathId);
+      setUserTweets(data);
+      // setIsTweetLoading(false);
+    } catch (error) {
+      console.log(error);
+      // setIsTweetLoading(false);
+    }
+  };
+
+  const getUserInfoAsync = async () => {
+    try {
+      const userInfo = await getUserInfo(pathId);
+      setImageStatus('fetching'); // 開始獲取圖片
+      if (userInfo) {
+        setImageStatus('loaded');
+        setUserInfo(userInfo);
+      }
+      return;
+    } catch (error) {
+      console.error('[getUser Info  with Async failed]', error);
+      setImageStatus('loading'); // 發生錯誤，設置回 loading 狀態
+    }
+  };
+
+  const getUserTweetsAsync = async () => {
+    try {
+      const data = await getUserTweets(pathId);
+      setUserTweets(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //@ profileCard/tweets初始渲染
+  useEffect(() => {
+    getUserInfoIntialAsync();
+    getUserTweetsIntialAsync();
+  }, []);
 
   //@ profileCard 渲染後端 userInfo
   useEffect(() => {
-    const getUserInfoAsync = async () => {
-      try {
-        const userInfo = await getUserInfo(pathId);
-        setImageStatus('fetching'); // 開始獲取圖片
-        if (userInfo) {
-          setIsLoading(false);
-          setImageStatus('loaded');
-          setUserInfo(userInfo);
-        }
-        return;
-      } catch (error) {
-        console.error('[getUser Info  with Async failed]', error);
-        setIsLoading(false);
-        setImageStatus('loading'); // 發生錯誤，設置回 loading 狀態
-      }
-    };
     getUserInfoAsync();
-
-    const getUserTweetsAsync = async () => {
-      try {
-        const data = await getUserTweets(pathId);
-        setUserTweets(data);
-        // console.log(data.length);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getUserTweetsAsync();
-    getUserInfoAsync();
   }, [
     pathId,
     like,
@@ -95,12 +128,14 @@ const UserPage = () => {
       case '1':
         return <ReplyLists pathId={pathId} />;
       case '2':
-        return <LikeLists pathId={pathId} setPathId={setPathId}/>;
+        return <LikeLists pathId={pathId} setPathId={setPathId} />;
       default:
         return (
           <TweetsLists
             tweets={userTweets}
             onToggleLike={handleChangeLikeMode}
+            isLoading={isLoading}
+            isTweetLoading={isTweetLoading}
           />
         );
     }
@@ -115,8 +150,6 @@ const UserPage = () => {
   //@ ProfileCard-圖片元件狀態 - 照片載入不同狀態設定圖片來源
   let avatarSource = '';
   let bkSource = '';
-  // avatarSource = userInfo.avatar; // 顯示實際使用者的圖片
-  // bkSource = userInfo.banner; // 顯示實際使用者的圖片
 
   if (imageStatus === 'loading') {
     avatarSource = palinBg; // 顯示示意圖，代表圖片尚未拿到
@@ -128,7 +161,7 @@ const UserPage = () => {
     avatarSource = userInfo.avatar; // 顯示實際使用者的圖片
     bkSource = userInfo.banner; // 顯示實際使用者的圖片
   }
-  // console.log('firstRender:', userInfo)
+
   return (
     <>
       <ContainerColSec role='user' pageIndex={1} memberId={member.id}>
@@ -146,7 +179,6 @@ const UserPage = () => {
               avatar={avatarSource}
               banner={bkSource}
               imageStatus={imageStatus}
-              // setModalProOpen={setModalProOpen}
             />
 
             <TabThreeGroup tabIndex={tabIndex} setTabIndex={setTabIndex} />
