@@ -25,7 +25,7 @@ const UserPage = () => {
   const [tabIndex, setTabIndex] = useState('0');
   const [pathId, setPathId] = useState(Number(useParams().id)); //只是為了與UserOtherPage一樣而設定state
   const [isLoading, setIsLoading] = useState(false); //ProfileCard-圖片元件狀態
-  const [isTweetLoading, setIsTweetLoading] = useState(false); //tweets-loading狀態
+
   const [imageStatus, setImageStatus] = useState('loading'); // ProfileCard-圖片元件狀態：'loading', 'fetching', 'loaded'
 
   //取得網址:id
@@ -65,18 +65,6 @@ const UserPage = () => {
     }
   };
 
-  const getUserTweetsIntialAsync = async () => {
-    // setIsTweetLoading(true);
-    try {
-      const data = await getUserTweets(pathId);
-      setUserTweets(data);
-      // setIsTweetLoading(false);
-    } catch (error) {
-      console.log(error);
-      // setIsTweetLoading(false);
-    }
-  };
-
   const getUserInfoAsync = async () => {
     try {
       const userInfo = await getUserInfo(pathId);
@@ -104,7 +92,7 @@ const UserPage = () => {
   //@ profileCard/tweets初始渲染
   useEffect(() => {
     getUserInfoIntialAsync();
-    getUserTweetsIntialAsync();
+    getUserTweetsAsync();
   }, []);
 
   //@ profileCard 渲染後端 userInfo
@@ -135,7 +123,6 @@ const UserPage = () => {
             tweets={userTweets}
             onToggleLike={handleChangeLikeMode}
             isLoading={isLoading}
-            isTweetLoading={isTweetLoading}
           />
         );
     }
@@ -171,7 +158,8 @@ const UserPage = () => {
           <div className='section-main-m'>
             <HeaderUser
               userAccountName={userInfo.name}
-              userTweetsLength={userTweets.length}
+              userTweetsLength={userTweets.length || null}
+              isLoading={isLoading}
             />
 
             <ProfileCard
