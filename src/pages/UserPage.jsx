@@ -135,19 +135,19 @@ const UserPage = () => {
   // }, [navigate, isAuthentic]); //只要isAuthentic或navigation有變化便執行
 
   //@ ProfileCard-圖片元件狀態 - 照片載入不同狀態設定圖片來源
-  let avatarSource = '';
-  let bkSource = '';
+  // let avatarSource = '';
+  // let bkSource = '';
 
-  if (imageStatus === 'loading') {
-    avatarSource = palinBg; // 顯示示意圖，代表圖片尚未拿到
-    bkSource = palinBg; // 顯示示意圖，代表圖片尚未拿到
-  } else if (imageStatus === 'fetching') {
-    avatarSource = loadingBg; // 顯示示意圖，代表圖片正在拿取中
-    bkSource = loadingBg; // 顯示示意圖，代表圖片正在拿取中
-  } else if (imageStatus === 'loaded') {
-    avatarSource = userInfo.avatar; // 顯示實際使用者的圖片
-    bkSource = userInfo.banner; // 顯示實際使用者的圖片
-  }
+  // if (imageStatus === 'loading') {
+  //   avatarSource = palinBg; // 顯示示意圖，代表圖片尚未拿到
+  //   bkSource = palinBg; // 顯示示意圖，代表圖片尚未拿到
+  // } else if (imageStatus === 'fetching') {
+  //   avatarSource = loadingBg; // 顯示示意圖，代表圖片正在拿取中
+  //   bkSource = loadingBg; // 顯示示意圖，代表圖片正在拿取中
+  // } else if (imageStatus === 'loaded') {
+  //   avatarSource = userInfo.avatar; // 顯示實際使用者的圖片
+  //   bkSource = userInfo.banner; // 顯示實際使用者的圖片
+  // }
 
   return (
     <>
@@ -164,9 +164,10 @@ const UserPage = () => {
 
             <ProfileCard
               {...userInfo}
-              avatar={avatarSource}
-              banner={bkSource}
+              avatar={userInfo.avatar}
+              banner={userInfo.banner}
               imageStatus={imageStatus}
+              isLoading={isLoading}
             />
 
             <TabThreeGroup tabIndex={tabIndex} setTabIndex={setTabIndex} />

@@ -1,12 +1,12 @@
 import React from 'react';
 // import DefaultBk from '../../assets/images/bk.jpg';
 import UserBkSkeleton from '../sekeleton/UserBkSkeleton';
-const UserBk = ({ bkUrl, isLoading, imageStatus }) => {
+const UserBk = ({ bkUrl = null, isLoading }) => {
   return (
     <>
       <div className='profile-bk-clip'>
         {isLoading && <UserBkSkeleton />}
-        {bkUrl && (
+        {!isLoading && (
           <img src={bkUrl} alt='mountain pic' className='profile-bk-image' />
         )}
       </div>

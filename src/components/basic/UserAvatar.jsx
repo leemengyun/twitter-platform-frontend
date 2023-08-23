@@ -15,7 +15,7 @@ const UserAvatar = ({ avatar, onClick, userId, isLoading }) => {
         }}
       >
         {isLoading && <UserAvatarSkeleton />}
-        {avatar && (
+        {!isLoading && (
           <img src={avatar} alt='userAvatar' className='user-avatar' />
         )}
       </div>
