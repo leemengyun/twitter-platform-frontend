@@ -7,10 +7,7 @@ const TweetsLists = ({ tweets, onClick, onToggleLike, isLoading }) => {
   return (
     <div className='TweetLists'>
       {isLoading && <TweetBasicCardSkeleton cards={8} />}
-
-      {tweets.length === 0 ? (
-        <EmptyState typeName='推文' />
-      ) : (
+      {!isLoading && tweets.length > 0 ? (
         tweets.map((tweet) => {
           return (
             <TweetCardBasic
@@ -25,6 +22,8 @@ const TweetsLists = ({ tweets, onClick, onToggleLike, isLoading }) => {
             />
           );
         })
+      ) : (
+        <EmptyState typeName='推文' />
       )}
     </div>
   );

@@ -24,7 +24,7 @@ import loadingBg from '../assets/images/loading-bk.jpeg';
 const UserPage = () => {
   const [tabIndex, setTabIndex] = useState('0');
   const [pathId, setPathId] = useState(Number(useParams().id)); //只是為了與UserOtherPage一樣而設定state
-  const [isLoading, setIsLoading] = useState(false); //ProfileCard-圖片元件狀態
+  const [isLoading, setIsLoading] = useState(true); //ProfileCard-圖片元件狀態
 
   const [imageStatus, setImageStatus] = useState('loading'); // ProfileCard-圖片元件狀態：'loading', 'fetching', 'loaded'
 

@@ -10,7 +10,7 @@ const LikeLists = ({ pathId, tabIndex, setPathId }) => {
   const [userLiked, setUserLiked] = useState([]);
   const navigate = useNavigate();
   const { like, handleChangeLikeMode, member } = useAuth();
-  const [isTweetLoading, setIsTweetLoading] = useState(false); //tweets-loading狀態
+  const [isTweetLoading, setIsTweetLoading] = useState(true); //tweets-loading狀態
 
   const handleClickCard = ({ userId }) => {
     userId === member.id
@@ -43,7 +43,7 @@ const LikeLists = ({ pathId, tabIndex, setPathId }) => {
   return (
     <div className='TweetLists'>
       {isTweetLoading && <TweetBasicCardSkeleton cards={4} />}
-      {userLiked.length === 0 ? (
+      {!isTweetLoading && userLiked.length === 0 ? (
         <EmptyState typeName='喜歡' />
       ) : (
         userLiked.map((tweet) => {

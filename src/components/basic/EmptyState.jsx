@@ -6,7 +6,7 @@ const EmptyState = ({ typeName }) => {
     <>
       <div className='empty-state-container'>
         <img src={iconEmpty} alt='Back to pre page' className='icon-empty' />
-        <p>OOPS! 尚無任何{typeName}</p>
+        <p> 尚無任何{typeName}的內容</p>
       </div>
     </>
   );
