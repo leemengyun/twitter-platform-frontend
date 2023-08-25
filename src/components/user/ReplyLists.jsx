@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getUserRepliedTweets } from '../../api/twitter';
 import TweetCardReply from '../basic/TweetCardReply';
-import TweetBasicCardSkeleton from '../sekeleton/TweetBasicCardSkeleton.jsx';
+import TweetBasicCardSkeleton from '../skeleton/TweetBasicCardSkeleton.jsx';
 import EmptyState from '../basic/EmptyState';
 
 const ReplyLists = ({ pathId, onClick }) => {

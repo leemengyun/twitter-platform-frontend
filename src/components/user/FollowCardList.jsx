@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { getTopUsers } from '../../api/twitter';
 import FollowCard from '../basic/FollowCard';
 import { useAuth } from '../context/AuthContext';
-import FollowCardSkeleton from '../sekeleton/FollowCardSkeleton';
+import FollowCardSkeleton from '../skeleton/FollowCardSkeleton';
 
 const FollowCardList = ({ setPathId }) => {
   const [users, setUsers] = useState([]);

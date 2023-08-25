@@ -33,7 +33,7 @@ import AdminUsers from './pages/AdminUsers';
 import TweetPage from './pages/TweetPage';
 import RegisterPage from './pages/RegisterPage';
 import { AuthProvider } from './components/context/AuthContext';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 function App({ router }) {
   // const [modalProOpen, setModalProOpen] = useState(false);

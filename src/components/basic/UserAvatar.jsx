@@ -1,9 +1,17 @@
 import React from 'react';
 // import skeleton-loading
-import UserAvatarSkeleton from '../sekeleton/UserAvatarSkeleton';
+import UserAvatarSkeleton from '../skeleton/UserAvatarSkeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import Defaultavatar from '../../assets/images/icon/avatar.svg';
 
-const UserAvatar = ({ avatar, onClick, userId, isLoading }) => {
+const UserAvatar = ({
+  avatar,
+  avatarSize,
+  onClick,
+  userId,
+  isLoading,
+  isUserLoading,
+}) => {
   return (
     <>
       <div
@@ -14,7 +22,7 @@ const UserAvatar = ({ avatar, onClick, userId, isLoading }) => {
           //因為在最內層點擊事件 外層有相對應的事件 也會跟著觸發 因此加入e.stopPropagation()來避免外層觸發的可能
         }}
       >
-        {isLoading && <UserAvatarSkeleton />}
+        {isLoading && <UserAvatarSkeleton avatarSize={avatarSize} />}
         {!isLoading && (
           <img src={avatar} alt='userAvatar' className='user-avatar' />
         )}

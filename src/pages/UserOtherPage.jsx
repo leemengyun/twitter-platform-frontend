@@ -64,8 +64,8 @@ const UserOtherPage = ({ setModalProOpen, setModalTweetOpen }) => {
     setIsLoading(true);
     try {
       const data = await getUserInfo(pathId);
-      setUserInfo(data);
       setIsLoading(false);
+      setUserInfo(data);
     } catch (error) {
       console.error('[getUser Info  with Async failed]', error);
       setIsLoading(false);
@@ -124,10 +124,12 @@ const UserOtherPage = ({ setModalProOpen, setModalTweetOpen }) => {
           <TweetsLists
             tweets={userTweets}
             onToggleLike={handleChangeLikeMode}
+            isLoading={isLoading}
           />
         );
     }
   }
+  // console.log(isLoading);
   return (
     <>
       <ContainerColSec

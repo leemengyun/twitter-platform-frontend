@@ -1,6 +1,6 @@
 import React from 'react';
 import TweetCardBasic from '../basic/TweetCardBasic';
-import TweetBasicCardSkeleton from '../sekeleton/TweetBasicCardSkeleton.jsx';
+import TweetBasicCardSkeleton from '../skeleton/TweetBasicCardSkeleton.jsx';
 import EmptyState from '../basic/EmptyState';
 
 const TweetsLists = ({ tweets, onClick, onToggleLike, isLoading }) => {

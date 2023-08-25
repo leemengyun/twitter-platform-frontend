@@ -1,6 +1,6 @@
 import React from 'react';
 // import DefaultBk from '../../assets/images/bk.jpg';
-import UserBkSkeleton from '../sekeleton/UserBkSkeleton';
+import UserBkSkeleton from '../skeleton/UserBkSkeleton';
 const UserBk = ({ bkUrl = null, isLoading }) => {
   return (
     <>

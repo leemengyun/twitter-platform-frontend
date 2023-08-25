@@ -52,12 +52,12 @@ const UserPage = () => {
     try {
       const userInfo = await getUserInfo(pathId);
       setImageStatus('fetching'); // 開始獲取圖片
-      if (userInfo) {
-        setImageStatus('loaded');
-        setIsLoading(false);
-        setUserInfo(userInfo);
-      }
-      return;
+      // if (userInfo) {
+      setImageStatus('loaded');
+      setIsLoading(false);
+      setUserInfo(userInfo);
+      // }
+      // return;
     } catch (error) {
       console.error('[getUser Info  with Async failed]', error);
       setIsLoading(false);

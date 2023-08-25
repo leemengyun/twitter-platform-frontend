@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getUserLikedTweets } from '../../api/twitter';
 import TweetCardLike from '../basic/TweetCardLike';
 import { useAuth } from '../context/AuthContext';
-import TweetBasicCardSkeleton from '../sekeleton/TweetBasicCardSkeleton.jsx';
+import TweetBasicCardSkeleton from '../skeleton/TweetBasicCardSkeleton.jsx';
 import EmptyState from '../basic/EmptyState';
 
 const LikeLists = ({ pathId, tabIndex, setPathId }) => {
